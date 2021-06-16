@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            position: absolute;
+            height: 160px;
+            width: 100%;
+            background-color: grey;
+        }
+        #wrapper{
+            padding-top: 160px;
+            min-height: calc(100vh - 260px);
+        }
+        footer{
+            background-color: grey;
+            height: 100px;
+
+        }
+        #example-expander{
+            background-color: red;
+        }
+    </style>
+    <script>
+        let expanded = false;
+        function expand(){
+            let exp_elem = document.getElementById("example-expander");
+            if(!expanded){
+                exp_elem.style.height = "1000px";
+                expanded = true;
+            }else{
+                exp_elem.style.height = "0";
+                expanded = false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <h1>This is the headers.  It is just and example</h1>
+    </nav>
+    <div id="wrapper">
+        <p>Have a look at this page - it has a footer that sits perfectly at the bottom of the page.  
+            No matter how little text is on the page.  If there was more content, the footer will be at pushed down even further.  And 
+            you will need to scroll down to get it.
+        </p>
+        <ol>
+            <li>Get a the height of the navbar and the footer</li>
+            <li>Use the calc() method of setting the height of a "wrapper" - an element that will hold all the content of the page. 100vh - *nav height + footer height*</li>
+            <p>eg. min-height: calc(100vh - 260px);</p>
+            <li></li>
+        </ol>
+        <button onclick="expand()">Click here to push add content to push down the footer</button>
+        <div id="example-expander">
+
+        </div>
+    </div>
+    <footer>
+        <h2>This is my footer</h2>
+    </footer>
+</body>
+</html>
